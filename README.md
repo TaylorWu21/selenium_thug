@@ -10,3 +10,4 @@
 
 ### Write View Specs!!!
 
+Cloned from https://github.com/jakesorce/selenium-thugs and added views specs with selenium
