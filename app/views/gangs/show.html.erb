@@ -1,0 +1,8 @@
+<h1 id='gang-header'><%= @gang.name %></h1>
+<h3>
+  <%= pluralize(@gang.thugs.count, 'Thug', 'Thugs') %> In Da Gang Mang
+</h3>
+<hr />
+
+<%= link_to 'Da Hood', gangs_path, class: 'btn red' %>
+<%= link_to 'Gang Members', gang_thugs_path(@gang), class: 'btn gang-member-btn' %>

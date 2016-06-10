@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Da Hood</title>
+  <%= stylesheet_link_tag    'application', media: 'all'%>
+  <!--Import Google Icon Font-->
+  <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <%= javascript_include_tag 'application' %>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <%= csrf_meta_tags %>
+</head>
+  <body>
+    <!-- Dropdown Structure -->
+    <ul id="dropdown1" class="dropdown-content">
+      <%= @gangs.each do |gang| %>
+        <li><%= link_to gang.name, gang_path(gang), class: 'gang-dropdown-link' %></li>
+      <% end %>
+    </ul>
+    <div class="navbar-fixed">
+      <nav>
+        <div class="nav-wrapper">
+          <%= link_to 'Thug Mansion', root_path, class: 'brand-logo' %>
+          <ul class="right hide-on-med-and-down">
+            <li><%= link_to 'New Gang', new_gang_path, id: 'nav-new-gang' %></li>
+            <!-- Dropdown Trigger -->
+            <li><a class="dropdown-button" href="#!" data-activates="dropdown1">Gangs<i class="material-icons right">arrow_drop_down</i></a></li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+    <main>
+      <div class='container center'>
+        <%= image_tag('http://www.blessedquietness.com/street_gang_13.jpg', class: 'gang-img responsive-img') %>
+        <%= yield %>
+      </div>
+    </main>
+  </body>
+</html>

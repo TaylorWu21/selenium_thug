@@ -1,0 +1,23 @@
+<h1 id='header'>Da Hood</h1>
+<hr />
+
+<% if @gangs.any? %>
+  <div class='row'>
+    <% @gangs.each do |gang| %>
+      <div class="col s12 m6">
+       <div class="card black">
+         <div class="card-content white-text">
+           <span class="card-title"><%= gang.name %></span>
+         </div>
+         <div class="card-action">
+           <%= link_to 'Knock The Door', gang_path(gang), class: 'gang-show-btn btn red' %>
+         </div>
+       </div>
+      </div>
+    <% end %>
+  </div>
+<% else %>
+  <h3 id='no-gangs-header'>No gangs, the city is clean!</h3>
+<% end %>
+
+<%= link_to 'New Gang', new_gang_path, id: 'new-gang-btn', class: 'btn' %> 

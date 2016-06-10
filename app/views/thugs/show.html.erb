@@ -1,0 +1,22 @@
+<h1 class='gang-thug'>Thug: <%= @thug.name %></h1>
+
+<ul>
+	<li>
+		Gang: <%= @gang.name %>
+	</li>
+	<li>
+		Number of Teardrops: <%= @thug.number_of_teardrops %>
+	</li>
+	<li>
+		OG: <%= @thug.og.to_s %>
+	</li>
+	<li>
+		Alive: <%= @thug.alive.to_s %>
+	</li>
+</ul>
+
+<div>
+	<%= link_to 'Edit', edit_gang_thug_path(@gang, @thug), class:'btn edit-thug-btn' %>
+	<%= link_to 'Delete', gang_thug_path(@gang, @thug), method: :delete, class:'delete-thug-btn btn red' %>
+</div>
+	<%= link_to 'Gang', gang_thugs_path(@gang), class:'btn thug-back' %>

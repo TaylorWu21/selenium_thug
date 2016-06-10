@@ -1,0 +1,19 @@
+<!-- if route is nested need parent class -->
+<%= form_for [@gang, @thug] do |f| %>
+
+	<%= f.label :name %>
+	<%= f.text_field :name %>
+
+	<%= f.label :number_of_teardrops %>
+	<%= f.number_field :number_of_teardrops %>
+
+	<%= f.label :alive %>
+	<%= f.select :alive, [true, false], {}, class: 'browser-default' %>
+
+	<%= f.label :og %>
+	<%= f.select :og, [true, false], {}, class: 'browser-default' %>
+
+	<!-- have to give nil to submit before giving it a class -->
+	<%= f.submit nil, class: 'btn', id: 'submit-thug' %>
+
+<% end %>

@@ -1,0 +1,7 @@
+<%= form_for @gang do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+
+  <%= link_to 'Back Out', :back, id: 'cancel-gang', class: 'btn red' %>
+  <%= f.submit nil, id: 'submit-gang-btn', class: 'btn' %>
+<% end %>

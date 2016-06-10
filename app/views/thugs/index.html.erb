@@ -1,0 +1,11 @@
+<h1 id='thug-header'>Thugs In The Gang: <%= @gang.name %></h1>
+<br />
+
+<% @thugs.each do |thug| %>
+	<div>
+		<%= link_to thug.name, gang_thug_path(@gang, thug), id: 'gang-thug' %>
+	</div>
+
+<% end %>
+
+<%= link_to 'Create Thug', new_gang_thug_path(@gang), class: 'create-thug-btn btn' %>
